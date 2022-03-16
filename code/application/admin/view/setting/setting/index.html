@@ -1,0 +1,125 @@
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Logo_image')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="input-group">
+                                    <input id="c-logo_image" class="form-control" size="50" name="row[logo_image]" type="text" value="{$row.logo_image|htmlentities}">
+                                    <div class="input-group-addon no-border no-padding">
+                                        <span><button type="button" id="faupload-logo_image" class="btn btn-danger faupload" data-input-id="c-logo_image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-logo_image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                        <span><button type="button" id="fachoose-logo_image" class="btn btn-primary fachoose" data-input-id="c-logo_image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                                    </div>
+                                    <span class="msg-box n-right" for="c-logo_image"></span>
+                                </div>
+                                <ul class="row list-inline faupload-preview" id="p-logo_image"></ul>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('注册送金币')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-one_rmb_to_coin_num" data-rule="required;range(0~)" class="form-control" name="row[send_coin]" type="number" value="{$row.send_coin|htmlentities}">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('One_rmb_to_coin_num')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-one_rmb_to_coin_num" data-rule="required;range(0~)" class="form-control" name="row[one_rmb_to_coin_num]" type="number" value="{$row.one_rmb_to_coin_num|htmlentities}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Recovery_discount')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-recovery_discount" data-rule="required;range(0~)" class="form-control" name="row[recovery_discount]" type="number" value="{$row.recovery_discount|htmlentities}">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Hot_box_banner')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="input-group">
+                                    <input id="c-hot_box_banner" class="form-control" size="50" name="row[hot_box_banner]" type="text" value="{$row.hot_box_banner|htmlentities}">
+                                    <div class="input-group-addon no-border no-padding">
+                                        <span><button type="button" id="faupload-hot_box_banner" class="btn btn-danger faupload" data-input-id="c-hot_box_banner" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-hot_box_banner"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                        <span><button type="button" id="fachoose-hot_box_banner" class="btn btn-primary fachoose" data-input-id="c-hot_box_banner" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                                    </div>
+                                    <span class="msg-box n-right" for="c-hot_box_banner"></span>
+                                </div>
+                                <ul class="row list-inline faupload-preview" id="p-hot_box_banner"></ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Cheap_box_banner')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="input-group">
+                                    <input id="c-cheap_box_banner" class="form-control" size="50" name="row[cheap_box_banner]" type="text" value="{$row.cheap_box_banner|htmlentities}">
+                                    <div class="input-group-addon no-border no-padding">
+                                        <span><button type="button" id="faupload-cheap_box_banner" class="btn btn-danger faupload" data-input-id="c-cheap_box_banner" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-cheap_box_banner"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                        <span><button type="button" id="fachoose-cheap_box_banner" class="btn btn-primary fachoose" data-input-id="c-cheap_box_banner" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                                    </div>
+                                    <span class="msg-box n-right" for="c-cheap_box_banner"></span>
+                                </div>
+                                <ul class="row list-inline faupload-preview" id="p-cheap_box_banner"></ul>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Service_number')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-service_number" data-rule="required" class="form-control" name="row[service_number]" type="text" value="{$row.service_number|htmlentities}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Service_qrcode')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="input-group">
+                                    <input id="c-service_qrcode" class="form-control" size="50" name="row[service_qrcode]" type="text" value="{$row.service_qrcode|htmlentities}">
+                                    <div class="input-group-addon no-border no-padding">
+                                        <span><button type="button" id="faupload-service_qrcode" class="btn btn-danger faupload" data-input-id="c-service_qrcode" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-service_qrcode"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                        <span><button type="button" id="fachoose-service_qrcode" class="btn btn-primary fachoose" data-input-id="c-service_qrcode" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                                    </div>
+                                    <span class="msg-box n-right" for="c-service_qrcode"></span>
+                                </div>
+                                <ul class="row list-inline faupload-preview" id="p-service_qrcode"></ul>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Z支付商户号')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-zpay_id"  class="form-control" name="row[zpay_id]" type="text" value="{$row.zpay_id|htmlentities}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Z支付密钥')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-zpay_key"  class="form-control" name="row[zpay_key]" type="text" value="{$row.zpay_key|htmlentities}"><br>
+
+                                Z支付官网<a target="_blank" href="https://zzhifu.com">https://zzhifu.com</a>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group layer-footer">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-8">
+                                <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

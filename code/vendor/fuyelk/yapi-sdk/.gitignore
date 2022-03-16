@@ -1,0 +1,8 @@
+/vendor/
+/composer.lock
+/demo/temp/*
+/src/*.cookies
+/src/*.check
+.idea
+!.gitignore
+!.gitkeep

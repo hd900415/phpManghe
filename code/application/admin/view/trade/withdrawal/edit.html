@@ -1,0 +1,88 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Amount')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-amount" class="form-control" readonly="readonly" type="number" value="{$row.amount|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-type" class="form-control" readonly="readonly" value="{:__('Type ' . $row.type)}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-username" class="form-control" readonly="readonly" value="{$row.username|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Account')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-account" class="form-control" readonly="readonly" value="{$row.account|htmlentities}">
+        </div>
+    </div>
+
+
+
+
+    {// 审核中，可修改状态}
+    {if 'review' == $row.status}
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:Form::radios('row[status]',$statusList,'review')}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Reason')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-reason"  class="form-control" type="text" name="row[reason]">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-danger btn-embossed disabled">{:__('确认')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+    {else}
+    {// 已审核，只能查看}
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-status-show" class="form-control" type="text" readonly="readonly" value="{$statusList[$row['status']]}">
+        </div>
+    </div>
+        {if 'reject' == $row.status}
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Reason')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-reason-show"  class="form-control" readonly="readonly" type="text" value="{$row.reason}">
+        </div>
+    </div>
+        {/if}
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="reset" class="btn btn-primary btn-embossed btn-close" onclick="Layer.closeAll();">{:__('Close')}</button>
+        </div>
+    </div>
+    {/if}
+
+
+
+
+
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

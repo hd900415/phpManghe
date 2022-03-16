@@ -1,0 +1,17 @@
+/nbproject/
+/runtime/*
+/public/uploads/*
+/public/.htaccess
+/public/*.htaccess
+/public/.user.ini
+/public/h5
+.idea
+composer.lock
+*.log
+*.css.map
+!.gitkeep
+.env
+.svn
+.vscode
+node_modules
+/thinkphp
